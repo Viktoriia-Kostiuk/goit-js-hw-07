@@ -17,17 +17,22 @@ const images = [
 ];
 
 
-images.forEach(el => {
-    const galleryEl = document.querySelector('#gallery');
-    galleryEl.insertAdjacentHTML('beforeend', `<li class='item'><img src='${el.url}' alt='${el.alt}'></img></li>`);
-    galleryEl.style.listStyle = 'none';
-    galleryEl.style.display = 'flex';
-  
-  const liEl = document.querySelectorAll('.item');
-  liEl.forEach(li => {
-    li.style.marginRight = '30px';
+const galleryEl = document.querySelector('#gallery');
+const cards = images.map(({ url, alt }) =>{
+  const liEl=document.createElement('li');
+  liEl.insertAdjacentHTML('beforeend', `<img src='${url}' alt='${alt}'></img>`);
+  liEl.style.marginRight = '30px';
+  return liEl;
   })
-})
-  
+
+galleryEl.append(...cards)
+  galleryEl.style.listStyle = 'none';
+  galleryEl.style.display = 'flex';
+
+
+
+
+
+
 
     

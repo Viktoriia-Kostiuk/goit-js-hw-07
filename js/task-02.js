@@ -8,10 +8,14 @@ const ingredients = [
 ];
 
 
-ingredients.forEach(ingredient => {
-    const ingredientsEl = document.querySelector('#ingredients');
-    const childEl=document.createElement('li');
-    childEl.textContent = ingredient;
-    ingredientsEl.appendChild(childEl);
-   } )
 
+const ingredientsRef = document.querySelector('#ingredients');
+let ingredientsEl = [];
+
+ingredients.forEach(ingredient => {
+    const childEl = document.createElement('li');
+    childEl.textContent = ingredient;
+    ingredientsEl.push(childEl);
+})
+
+ingredientsRef.append(...ingredientsEl);
