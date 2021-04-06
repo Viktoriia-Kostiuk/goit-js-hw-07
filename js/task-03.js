@@ -19,15 +19,15 @@ const images = [
 
 const galleryEl = document.querySelector('#gallery');
 const cards = images.map(({ url, alt }) =>{
-  const liEl=document.createElement('li');
-  liEl.insertAdjacentHTML('beforeend', `<img src='${url}' alt='${alt}'></img>`);
-  liEl.style.marginRight = '30px';
-  return liEl;
+    const liEl=document.createElement('li');
+    liEl.insertAdjacentHTML('beforeend', `<img src='${url}' alt='${alt}'></img>`);
+    liEl.style.marginRight = '30px';
+    return liEl;
   })
 
 galleryEl.append(...cards)
-  galleryEl.style.listStyle = 'none';
-  galleryEl.style.display = 'flex';
+     galleryEl.style.listStyle = 'none';
+     galleryEl.style.display = 'flex';
 
 
 
